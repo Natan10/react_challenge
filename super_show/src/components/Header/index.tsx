@@ -6,7 +6,7 @@ import './index.scss'
 
 const Header = () => {
   return (
-    <Navbar className="justify-content-between" expand="lg">
+    <Navbar className="justify-content-between" expand="lg" fixed="top">
       <Container fluid="md">
         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
         <Navbar.Brand href="#home">
