@@ -1,11 +1,11 @@
 import React from 'react'
-import Product from './components/Product'
+import Routes from './routes'
 
 function App() {
   return (
-    <div className="App">
-      <Product />
-    </div>
+    <>
+      <Routes />
+    </>
   )
 }
 
