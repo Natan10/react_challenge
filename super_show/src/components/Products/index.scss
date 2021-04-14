@@ -5,7 +5,7 @@
     display: grid;
     grid-template-columns: repeat(3,360px);
     column-gap: 10px;
-    row-gap: 20px;
+    row-gap: 50px;
     justify-items: center;
     justify-content: space-between;
   }
@@ -14,7 +14,7 @@
     .products_grid{
       grid-template-columns: repeat(2, 1fr);
       column-gap: 5px;
-      row-gap: 20px;
+      row-gap: 50px;
       justify-items: center;
       justify-content: space-between;
     }
@@ -24,7 +24,7 @@
     .products_grid{
       grid-template-columns: repeat(1, 280px);
       column-gap: 5px;
-      row-gap: 20px;
+      row-gap: 50px;
       justify-items: center;
       justify-content: center;
     }
