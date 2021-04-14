@@ -1,0 +1,42 @@
+.navbar {
+  background: #C23728;
+  height: 80px;
+
+  .navbar_cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: 16px;
+      color: white;
+    }
+    .navbar_icon_cart{
+      .icon_cart{
+        margin-right: 10px;
+        color: white;
+
+        &:hover{
+          transform: scale(1.1,1.1);
+        }
+      }
+
+      .icon_qtd_cart{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 45px;
+        right: 538px;
+        
+        background: #1E7BC3;
+        color: white;
+        
+        text-align: center;
+        font-weight: bold;
+        font-size: 15px;
+    
+        border-radius: 50%;    
+      }
+    }
+  }
+}
