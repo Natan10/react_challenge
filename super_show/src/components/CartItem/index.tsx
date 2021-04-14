@@ -2,6 +2,7 @@ import React from 'react'
 import { ButtonGroup, Button } from 'react-bootstrap'
 import { GoPlus } from 'react-icons/go'
 import { FiMinus } from 'react-icons/fi'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 import './index.scss'
 
@@ -38,6 +39,9 @@ const CartItem = () => {
       </td>
       <td>
         <span className="cartitem_value_total">R$ 250,00</span>
+      </td>
+      <td>
+        <AiOutlineCloseCircle size={25} />
       </td>
     </tr>
   )

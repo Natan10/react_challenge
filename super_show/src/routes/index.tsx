@@ -1,7 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Cart from '../components/Cart'
 import Header from '../components/Header'
-import ProductDetail from '../components/ProductDetail'
+// import ProductDetail from '../components/ProductDetail'
 // import Products from '../components/Products'
 
 const Routes = () => {
@@ -10,7 +11,7 @@ const Routes = () => {
       <Header />
       <Switch>
         {/* <Route exact path="/" component={Products} /> */}
-        <Route exact path="/" component={ProductDetail} />
+        <Route exact path="/" component={Cart} />
       </Switch>
     </Router>
   )

@@ -23,6 +23,7 @@ const Cart = () => {
             <th>Quantidade</th>
             <th>Valor Unitário</th>
             <th>Valor Total</th>
+            <th>Remover Do Carrinho</th>
           </tr>
         </thead>
         <tbody>
