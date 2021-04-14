@@ -1,6 +1,12 @@
 .navbar {
-  background: #C23728;
+  background: #011C26;
   height: 80px;
+
+  .navbar_title {
+    font-weight: bold;
+    color: white !important;
+    text-decoration: none;
+  }
 
   .navbar_cart{
     display: flex;
@@ -26,9 +32,9 @@
         height: 20px;
         position: absolute;
         top: 45px;
-        right: 538px;
+        right: 530px;
         
-        background: #1E7BC3;
+        background: #F24405;
         color: white;
         
         text-align: center;

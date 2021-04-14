@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Navbar, Container } from 'react-bootstrap'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 
@@ -8,8 +9,10 @@ const Header = () => {
   return (
     <Navbar className="justify-content-between" expand="lg">
       <Container fluid="md">
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Brand href="#home">
+        <Link to="/" className="navbar_title">
+          Supermercado Show
+        </Link>
+        <Link to="/cart" style={{ textDecoration: 'none' }}>
           <div className="navbar_cart">
             <div className="navbar_icon_cart">
               <AiOutlineShoppingCart className="icon_cart" size={30} />
@@ -17,10 +20,10 @@ const Header = () => {
             </div>
             <span>Meu carrinho</span>
           </div>
-        </Navbar.Brand>
+        </Link>
       </Container>
     </Navbar>
   )
 }
-// #C23728
+
 export default Header
