@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Navbar, Container } from 'react-bootstrap'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 
+import logo from '../../assets/LOGO-white.png'
 import './index.scss'
 
 const Header = () => {
@@ -10,7 +11,7 @@ const Header = () => {
     <Navbar className="justify-content-between" expand="lg">
       <Container fluid="md">
         <Link to="/" className="navbar_title">
-          Supermercado Show
+          <img src={logo} alt="" />
         </Link>
         <Link to="/cart" style={{ textDecoration: 'none' }}>
           <div className="navbar_cart">

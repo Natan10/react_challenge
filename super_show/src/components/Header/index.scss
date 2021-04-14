@@ -3,9 +3,10 @@
   height: 80px;
 
   .navbar_title {
-    font-weight: bold;
-    color: white !important;
-    text-decoration: none;
+    img{
+      width: 230px;
+      height: 50px;
+    }
   }
 
   .navbar_cart{
