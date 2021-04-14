@@ -1,0 +1,118 @@
+.product_detail_container{
+  padding: 2.1rem 0;
+
+  .product_detail_image{
+    border: 1px solid rgba(144, 144, 144,0.3) !important;
+    border-radius: 10px;
+    img{
+      padding: 20px;
+    }
+  }
+
+  .product_detail_info{
+    display: flex;
+    flex-direction: column;
+
+    .product_detail_description{
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--color-dark);
+    }
+
+    .product_detail_promo{
+      label {
+        font-weight: bold;
+        background: var(--color-pink);
+        color: white;
+        width: 70%;
+        text-align: center;
+        padding: 6.5px 18px;
+        position: relative;
+      }
+      label:after {
+        width: 0;
+        height: 0;
+        border: 18.5px solid transparent;
+        position: absolute;
+        content: "";
+        border-top-color: var(--color-pink);
+        right: -28px;
+        top: 0px;
+        border-left-color: var(--color-pink);
+      }
+      label:before {
+          width: 0;
+          height: 0;
+          border: 18.5px solid transparent;
+          position: absolute;
+          content: "";
+          border-bottom-color: var(--color-pink);
+          right: -28px;
+          top: 0px;
+      }
+
+
+      p{
+        margin: 5px 0 15px 0;
+        padding: 0;
+
+        font-weight: 600;
+        font-size: 1.2rem;
+        text-align: start;
+
+      }
+    }
+
+    .product_detail_offer{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      line-height: 1.7rem;
+
+      span.product_detail_oldprice{
+        font-size: 1.4rem !important;
+        color: var(--color-dark-gray);
+      }
+      span.product_detail_newprice{
+        font-size: 1.6rem !important;
+        font-weight: 600;
+        color: var(--color-red-two);
+      }
+    }
+    .product_detail_price{
+      margin-bottom: 20px;
+      font-size: 1.6rem !important;
+      color: var(--color-red-two);
+    }
+  }
+
+  .product_detail_cart{
+    button{
+      padding: 8px 15px;
+
+      svg{
+        margin-left: 5px;
+      }
+    }
+
+    .product_cart_quantity{
+        button.cart_increase{
+          border-radius: 20px 0 0 20px;
+          margin-right: 5px;
+        }
+        button.cart_decrease{
+          border-radius: 0px 20px 20px 0px;
+          margin-left: 5px;
+        }
+        button.cart_quantity{
+          background-color: transparent;
+          border: transparent;
+          color: var(--color-dark);
+          font-weight: bold;
+          font-size: 1.1rem;
+        }
+    }
+  }
+}
+
