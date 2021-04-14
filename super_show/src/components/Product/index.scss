@@ -1,0 +1,66 @@
+.card{
+  .product_image{
+    padding: 20px;
+  }
+  .card-header{
+    background: #1E7BC3;
+    text-align: center;
+    
+    .product_header{
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      // -webkit-animation: growName 1s linear infinite  alternate !important;
+      // animation: growName 1s linear infinite  alternate !important;
+      // animation: move_promo 1.2s alternate infinite ease-in !important;
+    }
+  }
+
+  .card-body{
+    padding: 0;
+
+    .product_description{
+      padding: 0 5px;
+      margin-bottom: 10px !important;
+      
+      font-size: 1.0rem !important;
+      line-height: 1.3rem;
+      color: rgb(105,105,105);
+      text-transform: capitalize;
+    }
+    .product_info{
+      padding: 5px 5px;
+      background: rgba(105,105,105,0.2);
+
+      .product_price{
+        display: flex;
+        flex-direction: column;
+        .product_offer{
+          font-size: 0.9rem;
+          font-weight: bold;
+          s{
+            font-size: 1rem;
+            margin-right: 2px;
+          }
+        }
+        .product_new_price{
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: #C23728;
+        }
+      }
+    }
+  }
+}
+
+@keyframes growName {
+  from {
+    transform: scale(1.5,1.5);
+    color: red;
+  }
+
+  to {
+    transform: scale(1.0,1.0);
+    color: white;
+  }
+}
