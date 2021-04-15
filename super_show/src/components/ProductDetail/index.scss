@@ -82,8 +82,9 @@
         color: var(--color-red-two);
       }
     }
-    .product_detail_price{
+    span.product_detail_price{
       margin-bottom: 20px;
+      font-weight: 600;
       font-size: 1.6rem !important;
       color: var(--color-red-two);
     }

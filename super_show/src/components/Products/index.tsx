@@ -9,7 +9,6 @@ import './index.scss'
 const Products = () => {
   const { cartReducer } = useSelector((state): any => state)
 
-  console.log(cartReducer.products)
   return (
     <Container className="container_products">
       <div className="products_grid">

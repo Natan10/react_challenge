@@ -15,7 +15,6 @@ const ShowProduct = () => {
     )
     setProductData(prod[0])
   }, [params, cartReducer])
-  console.log(productData)
 
   return <ProductDetail product={productData} />
 }
