@@ -12,7 +12,10 @@ import { GoPlus } from 'react-icons/go'
 import { FiMinus } from 'react-icons/fi'
 
 import { useDispatch } from 'react-redux'
-import { addProductToCardSaga } from '../../store/cart/action'
+import {
+  addProductToCartSaga,
+  updateProductInCartSaga
+} from '../../store/cart/action'
 import { ProductProps } from '../Product'
 import { convertValue, convertPromo, convertTextPromo } from '../../util/index'
 
@@ -26,7 +29,7 @@ const ProductDetail = ({ product }: ProductProps) => {
 
   const handleAddItem = () => {
     if (product.stock > 0) {
-      dispatch(addProductToCardSaga(product))
+      dispatch(addProductToCartSaga(product))
       setTotal(total + 1)
     } else {
       new Notification('Olá', {
@@ -34,9 +37,17 @@ const ProductDetail = ({ product }: ProductProps) => {
       })
     }
   }
-  // const handleRemoveItem = () => {
-  //   total > 0 && setTotal((state) => state - 1)
-  // }
+
+  const handleRemoveItem = () => {
+    if (total !== 0) {
+      dispatch(updateProductInCartSaga(product))
+      setTotal(state => state - 1)
+    } else {
+      new Notification('Olá', {
+        body: 'Não pode mais tirar!!!'
+      })
+    }
+  }
 
   return (
     <Container className="product_detail_container">
@@ -87,7 +98,11 @@ const ProductDetail = ({ product }: ProductProps) => {
                   <Button className="cart_quantity" disabled>
                     {total}
                   </Button>
-                  <Button className="cart_decrease" variant="outline-primary">
+                  <Button
+                    className="cart_decrease"
+                    variant="outline-primary"
+                    onClick={handleRemoveItem}
+                  >
                     <FiMinus />
                   </Button>
                 </ButtonGroup>

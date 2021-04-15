@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable generator-star-spacing */
 import { put, call, takeLatest } from 'redux-saga/effects'
-import { addProducts, addProductToCard } from './action'
+import { addProducts, addProductToCart, updateProductInCart } from './action'
 import { CartActionsSaga, ProductData } from './types'
 import { getItems } from '../../services/api'
 
@@ -15,9 +15,16 @@ function* getDataItem() {
 }
 
 function* IncreaseProductToCart(data: any) {
-  console.log('aqui')
   try {
-    yield put(addProductToCard(data.payload))
+    yield put(addProductToCart(data.payload))
+  } catch (e) {
+    console.log('Saga error', e)
+  }
+}
+
+function* DecreaseProductInCart(data: any) {
+  try {
+    yield put(updateProductInCart(data.payload))
   } catch (e) {
     console.log('Saga error', e)
   }
@@ -25,7 +32,8 @@ function* IncreaseProductToCart(data: any) {
 
 const CartSagas = [
   takeLatest(CartActionsSaga.ADD_PRODUCTS_SAGA, getDataItem),
-  takeLatest(CartActionsSaga.ADD_CART_PRODUCT_SAGA, IncreaseProductToCart)
+  takeLatest(CartActionsSaga.ADD_CART_PRODUCT_SAGA, IncreaseProductToCart),
+  takeLatest(CartActionsSaga.UPDATE_CART_PRODUCT_SAGA, DecreaseProductInCart)
 ]
 
 export default CartSagas

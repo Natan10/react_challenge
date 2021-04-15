@@ -50,6 +50,30 @@ export const cartReducer = (state = InitialState, action: AnyAction) => {
         }
         return state
       }
+    case CartActions.UPDATE_CART_PRODUCT:
+      const updatedCart = state.cart
+      const updatedProducts = state.products
+
+      const indexUpdateCart = state.cart.findIndex(
+        prod => prod.id === action.payload.id
+      )
+
+      if (updatedCart[indexUpdateCart].qtd > 0) {
+        updatedCart[indexUpdateCart].qtd -= 1
+        updatedProducts[indexUpdateCart].stock += 1
+
+        if (updatedCart[indexUpdateCart].qtd === 0) {
+          return {
+            products: [...updatedProducts],
+            cart: []
+          }
+        }
+        return {
+          products: [...updatedProducts],
+          cart: [...updatedCart]
+        }
+      }
+      return state
     default:
       return state
   }
