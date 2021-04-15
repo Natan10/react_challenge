@@ -1,31 +1,18 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Cart from '../components/Cart'
 import Header from '../components/Header'
-// import ProductDetail from '../components/ProductDetail'
-// import Products from '../components/Products'
-import api from '../services/api'
+import ShowCart from '../pages/ShowCart'
+import ShowProduct from '../pages/ShowProduct'
+import ShowProducts from '../pages/ShowProducts'
 
 const Routes = () => {
-  useEffect(() => {
-    const getItems = async () => {
-      try {
-        console.log(process.env.REACT_APP_API_URL)
-        const { data } = await api.get('')
-        console.log(data)
-      } catch (e) {
-        console.log(e)
-      }
-    }
-    getItems()
-  }, [])
-
   return (
     <Router>
       <Header />
       <Switch>
-        {/* <Route exact path="/" component={Products} /> */}
-        <Route exact path="/" component={Cart} />
+        <Route exact path="/" component={ShowProducts} />
+        <Route exact path="/product/:id" component={ShowProduct} />
+        <Route exact path="/cart" component={ShowCart} />
       </Switch>
     </Router>
   )
