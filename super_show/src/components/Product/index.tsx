@@ -23,7 +23,7 @@ const Product = ({ product }:ProductProps) => {
           <img src={promo} alt="promo" />
         </div>
       )}
-      <Link to="/" style={{ textAlign: 'center' }}>
+      <Link to={`/product/${product.id}`} style={{ textAlign: 'center' }}>
         <Card.Img
           className="product_image"
           variant="top"
