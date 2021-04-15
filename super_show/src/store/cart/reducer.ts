@@ -13,5 +13,7 @@ export const cartReducer = (state = InitialState, action: AnyAction) => {
         ...state,
         products: [...action.payload]
       }
+    default:
+      return state
   }
 }
