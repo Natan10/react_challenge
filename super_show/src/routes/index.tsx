@@ -1,11 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addProductsSaga } from '../store/cart/action'
+
 import Header from '../components/Header'
 import ShowCart from '../pages/ShowCart'
 import ShowProduct from '../pages/ShowProduct'
 import ShowProducts from '../pages/ShowProducts'
 
 const Routes = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const loadItems = async () => {
+      try {
+        await dispatch(addProductsSaga())
+      } catch (e) {
+        console.log('full errooo', e)
+      }
+    }
+    loadItems()
+  }, [dispatch])
+
   return (
     <Router>
       <Header />
