@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar, Container } from 'react-bootstrap'
@@ -5,8 +6,10 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 import logo from '../../assets/LOGO-white.png'
 import './index.scss'
+import { useSelector } from 'react-redux'
 
 const Header = () => {
+  const { cartReducer } = useSelector((state): any => state)
   return (
     <Navbar className="justify-content-between" expand="lg">
       <Container fluid="md">
@@ -17,7 +20,9 @@ const Header = () => {
           <div className="navbar_cart">
             <div className="navbar_icon_cart">
               <AiOutlineShoppingCart className="icon_cart" size={30} />
-              <span className="icon_qtd_cart">5</span>
+              {cartReducer.cart.length > 0 && (
+                <span className="icon_qtd_cart">{cartReducer.cart.length}</span>
+              )}
             </div>
             <span>Meu carrinho</span>
           </div>
