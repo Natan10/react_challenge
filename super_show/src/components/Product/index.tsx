@@ -4,41 +4,47 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { ProductData } from '../../store/cart/types'
+import { convertValue } from '../../util'
 
 import promo from '../../assets/promo.png'
 
 import './index.scss'
 
-const Product = () => {
-  const offer = true
+export interface ProductProps {
+  product: ProductData
+}
 
+const Product = ({ product }:ProductProps) => {
   return (
     <Card style={{ width: '18rem' }}>
-      <div className="product_promo">
-        <img src={promo} alt="promo" />
-      </div>
+      {product.promotion && (
+        <div className="product_promo">
+          <img src={promo} alt="promo" />
+        </div>
+      )}
       <Link to="/" style={{ textAlign: 'center' }}>
         <Card.Img
           className="product_image"
           variant="top"
-          src="https://merconnect.s3.amazonaws.com/uploads/products/7501006705591-min.png"
+          src={product.image}
         />
       </Link>
       <Card.Body>
         <Card.Text className="product_description">
-          ACAI AMAZON 200G COM BANANA
+          {product.description}
         </Card.Text>
         <Card.Text className="product_info">
-          {offer ? (
+          {product.offer ? (
             <div className="product_price">
               <span className="product_offer">
-                <s>R$ 11.999,00</s>
+                <s>{convertValue(product.price)}</s>
               </span>
-              <span className="product_new_price">R$ 9.499,00</span>
+              <span className="product_new_price">{convertValue(product.offer)}</span>
             </div>
               ) : (
             <div className="product_price">
-              <span className="product_new_price">R$ 9.499,00</span>
+              <span className="product_new_price">{convertValue(product.price)}</span>
             </div>
               )}
         </Card.Text>
