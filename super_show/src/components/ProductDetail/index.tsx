@@ -7,41 +7,42 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { GoPlus } from 'react-icons/go'
 import { FiMinus } from 'react-icons/fi'
 
+import { ProductProps } from '../Product'
+import { convertValue, convertPromo, convertTextPromo } from '../../util/index'
+
 import './index.scss'
 
-const ProductDetail = () => {
-  const [addItem, setAddItem] = useState(false)
+const ProductDetail = ({ product }:ProductProps) => {
+  const [addItem, setAddItem] = useState(true)
 
-  const offer = true
-  const promo = true
   return (
     <Container className="product_detail_container">
       <Row>
         <Col className="product_detail_image">
           <Image
-            src="https://merconnect.s3.amazonaws.com/uploads/products/0762cc690ada9c4f79fde676eaa4c3ade9210d74.png"
+            src={product.image}
             rounded
           />
         </Col>
         <Col>
           <div className="product_detail_info">
-            <span className="product_detail_description">ABACAXI UNIDADE</span>
-            {promo && (
+            <span className="product_detail_description">{product.description}</span>
+            {product.promotion && (
               <div className="product_detail_promo">
-                <label>Compre 3 leve 4</label>
+                <label>{convertPromo(product.promotion)}</label>
                 <p>
-                  Ao comprar 4 unidades do produto o preço sai pelo valor de 3!!!
+                 {convertTextPromo(product.promotion)}
                 </p>
               </div>
             )}
-            {offer ? (
+            {product.offer ? (
               <div className="product_detail_offer">
                 <span className="product_detail_oldprice">
                   <s>
-                    R$ 45.00
+                    {convertValue(product.price)}
                   </s>
                 </span>
-                <span className="product_detail_newprice">R$ 20.00</span>
+                <span className="product_detail_newprice">{convertValue(product.offer)}</span>
               </div>
             ):(
               <span className="product_detail_price">R$ 20.00</span>

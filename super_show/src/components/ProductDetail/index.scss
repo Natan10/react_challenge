@@ -4,6 +4,7 @@
   .product_detail_image{
     border: 1px solid rgba(144, 144, 144,0.3) !important;
     border-radius: 10px;
+    text-align: center;
     img{
       padding: 20px;
     }
@@ -16,6 +17,7 @@
     .product_detail_description{
       font-size: 2rem;
       font-weight: bold;
+      line-height: 2.5rem;
       color: var(--color-dark);
     }
 
