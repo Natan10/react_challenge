@@ -1,6 +1,3 @@
-/* eslint-disable indent */
-/* eslint-disable prettier/prettier */
-/* eslint-disable multiline-ternary */
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
@@ -15,7 +12,7 @@ export interface ProductProps {
   product: ProductData
 }
 
-const Product = ({ product }:ProductProps) => {
+const Product = ({ product }: ProductProps) => {
   return (
     <Card style={{ width: '18rem' }}>
       {product.promotion && (
@@ -24,11 +21,7 @@ const Product = ({ product }:ProductProps) => {
         </div>
       )}
       <Link to={`/product/${product.id}`} style={{ textAlign: 'center' }}>
-        <Card.Img
-          className="product_image"
-          variant="top"
-          src={product.image}
-        />
+        <Card.Img className="product_image" variant="top" src={product.image} />
       </Link>
       <Card.Body>
         <Card.Text className="product_description">
@@ -40,13 +33,17 @@ const Product = ({ product }:ProductProps) => {
               <span className="product_offer">
                 <s>{convertValue(product.price)}</s>
               </span>
-              <span className="product_new_price">{convertValue(product.offer)}</span>
+              <span className="product_new_price">
+                {convertValue(product.offer)}
+              </span>
             </div>
-              ) : (
+          ) : (
             <div className="product_price">
-              <span className="product_new_price">{convertValue(product.price)}</span>
+              <span className="product_new_price">
+                {convertValue(product.price)}
+              </span>
             </div>
-              )}
+          )}
         </Card.Text>
       </Card.Body>
     </Card>
