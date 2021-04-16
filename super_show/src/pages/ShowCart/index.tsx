@@ -4,11 +4,11 @@ import Cart from '../../components/Cart'
 
 const ShowCart = () => {
   const [cart, setCart] = useState([])
-  const { cartReducer } = useSelector((state): any => state)
+  const { cartState } = useSelector((state): any => state)
 
   useEffect(() => {
-    setCart(cartReducer.cart)
-  }, [cartReducer.cart])
+    setCart(cartState.cart)
+  }, [cartState.cart])
 
   return <Cart products={cart} />
 }

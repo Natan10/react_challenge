@@ -13,15 +13,15 @@ import Buttons from '../Buttons'
 
 const CartItem = ({ product }: any) => {
   const dispatch = useDispatch()
-  const { cartReducer } = useSelector((state): any => state)
+  const { cartState } = useSelector((state): any => state)
   const [quantity, setQuantity] = useState(product?.qtd)
 
-  const index = cartReducer.products.findIndex(
+  const index = cartState.products.findIndex(
     (prod: any) => prod.id === product.id
   )
 
   const handleAddItem = () => {
-    if (cartReducer.products[index].stock !== 0) {
+    if (cartState.products[index].stock !== 0) {
       dispatch(addProductToCartSaga(product))
       setQuantity(quantity + 1)
     } else {
@@ -30,7 +30,7 @@ const CartItem = ({ product }: any) => {
   }
 
   const handleRemoveItem = () => {
-    if (quantity > 0) {
+    if (quantity > 1) {
       dispatch(updateProductInCartSaga(product))
       setQuantity(quantity - 1)
     } else {

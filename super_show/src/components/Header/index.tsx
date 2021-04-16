@@ -8,7 +8,7 @@ import './index.scss'
 import { useSelector } from 'react-redux'
 
 const Header = () => {
-  const { cartReducer } = useSelector((state): any => state)
+  const { cartState } = useSelector((state): any => state)
   return (
     <Navbar className="justify-content-between" expand="lg">
       <Container fluid="md">
@@ -19,8 +19,8 @@ const Header = () => {
           <div className="navbar_cart">
             <div className="navbar_icon_cart">
               <AiOutlineShoppingCart className="icon_cart" size={30} />
-              {cartReducer.cart.length > 0 && (
-                <span className="icon_qtd_cart">{cartReducer.cart.length}</span>
+              {cartState.cart.length > 0 && (
+                <span className="icon_qtd_cart">{cartState.cart.length}</span>
               )}
             </div>
             <span>Meu carrinho</span>

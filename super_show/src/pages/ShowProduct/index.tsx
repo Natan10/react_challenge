@@ -7,14 +7,14 @@ import Header from '../../components/Header'
 const ShowProduct = () => {
   const [productData, setProductData] = useState<any>([])
   const params: any = useParams()
-  const { cartReducer } = useSelector((state): any => state)
+  const { cartState } = useSelector((state): any => state)
 
   useEffect(() => {
-    const prod = cartReducer.products.filter(
+    const prod = cartState.products.filter(
       (product: any) => product.id === parseInt(params.id)
     )
     setProductData(prod[0])
-  }, [params, cartReducer])
+  }, [params, cartState])
 
   return (
     <>

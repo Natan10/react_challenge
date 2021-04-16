@@ -18,15 +18,13 @@ interface CartProducts {
 const Cart = ({ products }: CartProducts) => {
   const [total, setTotal] = useState(0)
 
-  const { cartReducer } = useSelector((state): any => state)
-  const cart = useSelector((state): any => state)
+  const { cartState } = useSelector((state): any => state)
 
-  const value = cartReducer.cart.reduce((count: number, product: any) => {
+  const value = cartState.cart.reduce((count: number, product: any) => {
     const quantity = product.qtd
     return (count += sumValue(product, quantity))
   }, 0)
 
-  console.log(cart)
   return (
     <Container className="carditem_container">
       <Link to="/" className="cart_back">
