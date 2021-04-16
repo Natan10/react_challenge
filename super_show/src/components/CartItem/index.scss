@@ -1,15 +1,19 @@
-.carditem_image{
-  width: 180px;
-}
-.carditem_description{
-  padding: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-align: start;
-  word-break: break-all;
-}
+.tr_product{
+  border-top: 1px solid rgba(114, 114, 115,0.2);
 
-.cartitem_value_unit,.cartitem_value_total{
-  font-weight: bold;
-  font-size: 1.0rem;
+  .carditem_image{
+    width: 180px;
+  }
+  .carditem_description{
+    padding: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    word-break: break-all;
+  }
+  
+  .cartitem_value_unit,.cartitem_value_total{
+    font-weight: bold;
+    font-size: 1.0rem;
+  }
 }

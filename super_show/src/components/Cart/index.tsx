@@ -1,21 +1,17 @@
 import React from 'react'
 import { Container, Table } from 'react-bootstrap'
 import CardItem from '../CartItem'
-
+import { ProductProps } from '../Product'
 import './index.scss'
 
-const Cart = () => {
-  const cardItem = [
-    <CardItem key={1} />,
-    <CardItem key={2} />,
-    <CardItem key={3} />,
-    <CardItem key={4} />,
-    <CardItem key={5} />
-  ]
+interface CartProducts {
+  products: ProductProps[]
+}
 
+const Cart = ({ products }: CartProducts) => {
   return (
     <Container className="carditem_container">
-      <Table>
+      <Table borderless>
         <thead>
           <tr>
             <th>Produto</th>
@@ -27,8 +23,8 @@ const Cart = () => {
           </tr>
         </thead>
         <tbody>
-          {cardItem.map((index: any, prod: any) => {
-            return cardItem[prod]
+          {products.map((prod: any) => {
+            return <CardItem key={prod.id} product={prod} />
           })}
         </tbody>
       </Table>
