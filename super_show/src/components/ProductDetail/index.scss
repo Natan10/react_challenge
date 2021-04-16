@@ -1,6 +1,23 @@
 .product_detail_container{
   padding: 2.1rem 0;
 
+  .home_back_row{
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: flex-end;
+    .home_back{
+      padding: 5px 10px;
+      text-decoration: none;
+      border: 1px solid var(--color-red-one);
+      border-radius: 5px;
+      color: var(--color-red-one);
+  
+      &:hover{
+        background: rgba(238, 149, 128,0.2);
+      }
+    }
+  }
+
   .product_detail_image{
     display: flex;
     align-items: center;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import {
   addProductToCartSaga,
   updateProductInCartSaga
@@ -32,12 +33,17 @@ const ProductDetail = ({ product }: ProductProps) => {
       dispatch(updateProductInCartSaga(product))
       setTotal(state => state - 1)
     } else {
-      toast.info('Valor não permitido!')
+      toast.info('Quantidade não permitida!')
     }
   }
 
   return (
     <Container className="product_detail_container">
+      <Row className="home_back_row">
+        <Link to="/" className="home_back">
+          Voltar
+        </Link>
+      </Row>
       <Row>
         <Col className="product_detail_image">
           <Image src={product.image} rounded />
