@@ -1,8 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import ProductDetail from '../../components/ProductDetail'
+import Header from '../../components/Header'
 
 const ShowProduct = () => {
   const [productData, setProductData] = useState<any>([])
@@ -16,7 +16,12 @@ const ShowProduct = () => {
     setProductData(prod[0])
   }, [params, cartReducer])
 
-  return <ProductDetail product={productData} />
+  return (
+    <>
+      <Header />
+      <ProductDetail product={productData} />
+    </>
+  )
 }
 
 export default ShowProduct
