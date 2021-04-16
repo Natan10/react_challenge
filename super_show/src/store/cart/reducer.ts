@@ -79,11 +79,21 @@ export const cartReducer = (state = InitialState, action: AnyAction) => {
       }
       return state
     case CartActions.REMOVE_CART_PRODUCT:
+      const productsRemove = state.products
+      const indexProduct = productsRemove.findIndex(
+        item => item.id === action.payload
+      )
+      const indexCartRemove = state.cart.findIndex(
+        item => item.id === action.payload
+      )
+
+      productsRemove[indexProduct].stock += state.cart[indexCartRemove].qtd
+
       const removeCartProd = state.cart.filter(
         prod => prod.id !== action.payload
       )
       return {
-        ...state,
+        products: [...productsRemove],
         cart: [...removeCartProd]
       }
     default:
