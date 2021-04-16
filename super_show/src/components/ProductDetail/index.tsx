@@ -1,24 +1,14 @@
 import React, { useState } from 'react'
-import {
-  Container,
-  Row,
-  Col,
-  Image,
-  Button,
-  ButtonGroup
-} from 'react-bootstrap'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
-import { GoPlus } from 'react-icons/go'
-import { FiMinus } from 'react-icons/fi'
-
 import { useDispatch } from 'react-redux'
 import {
   addProductToCartSaga,
   updateProductInCartSaga
 } from '../../store/cart/action'
+import { Container, Row, Col, Image, Button } from 'react-bootstrap'
+import Buttons from '../Buttons'
 import { ProductProps } from '../Product'
 import { convertValue, convertPromo, convertTextPromo } from '../../util/index'
-
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 import './index.scss'
 
 const ProductDetail = ({ product }: ProductProps) => {
@@ -86,27 +76,11 @@ const ProductDetail = ({ product }: ProductProps) => {
                 <AiOutlineShoppingCart size={20} />
               </Button>
             ) : (
-              <div className="product_cart_quantity">
-                <ButtonGroup size="sm">
-                  <Button
-                    className="cart_increase"
-                    variant="outline-primary"
-                    onClick={handleAddItem}
-                  >
-                    <GoPlus />
-                  </Button>
-                  <Button className="cart_quantity" disabled>
-                    {total}
-                  </Button>
-                  <Button
-                    className="cart_decrease"
-                    variant="outline-primary"
-                    onClick={handleRemoveItem}
-                  >
-                    <FiMinus />
-                  </Button>
-                </ButtonGroup>
-              </div>
+              <Buttons
+                add={handleAddItem}
+                remove={handleRemoveItem}
+                quantity={total}
+              />
             )}
           </div>
         </Col>
