@@ -1,7 +1,3 @@
-/* eslint-disable no-fallthrough */
-/* eslint-disable prettier/prettier */
-/* eslint-disable indent */
-/* eslint-disable no-case-declarations */
 import { AnyAction } from 'redux'
 import { CartReducer, CartActions } from './types'
 

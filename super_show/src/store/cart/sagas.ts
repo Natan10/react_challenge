@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable generator-star-spacing */
 import { put, call, takeLatest } from 'redux-saga/effects'
 import {
   addProducts,
@@ -7,7 +5,7 @@ import {
   updateProductInCart,
   removeProductToCart
 } from './action'
-import { CartActionsSaga, ProductData } from './types'
+import { CartActionsSaga } from './types'
 import { getItems } from '../../services/api'
 
 function* getDataItem() {
