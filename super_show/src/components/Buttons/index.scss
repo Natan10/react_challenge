@@ -1,0 +1,17 @@
+.buttons_quantity{
+  button.button_increase{
+    border-radius: 20px 0 0 20px;
+    margin-right: 5px;
+  }
+  button.button_decrease{
+    border-radius: 0px 20px 20px 0px;
+    margin-left: 5px;
+  }
+  button.button_quantity{
+    background-color: transparent;
+    border: transparent;
+    color: var(--color-dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+}
