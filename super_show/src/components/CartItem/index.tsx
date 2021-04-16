@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
 import {
   addProductToCartSaga,
   updateProductInCartSaga,
@@ -24,9 +25,7 @@ const CartItem = ({ product }: any) => {
       dispatch(addProductToCartSaga(product))
       setQuantity(quantity + 1)
     } else {
-      new Notification('Olá', {
-        body: 'Infelizmente não há produto no stock!!!'
-      })
+      toast.info('Infelizmente não temos mais desse produto no estoque!')
     }
   }
 

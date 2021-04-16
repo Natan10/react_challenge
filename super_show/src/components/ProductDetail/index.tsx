@@ -5,6 +5,7 @@ import {
   updateProductInCartSaga
 } from '../../store/cart/action'
 import { Container, Row, Col, Image, Button } from 'react-bootstrap'
+import { toast } from 'react-toastify'
 import Buttons from '../Buttons'
 import { ProductProps } from '../Product'
 import { convertValue, convertPromo, convertTextPromo } from '../../util/index'
@@ -22,9 +23,7 @@ const ProductDetail = ({ product }: ProductProps) => {
       dispatch(addProductToCartSaga(product))
       setTotal(total + 1)
     } else {
-      new Notification('Olá', {
-        body: 'Infelizmente não há produto no stock!!!'
-      })
+      toast.info('Infelizmente não temos mais desse produto no estoque!')
     }
   }
 
@@ -33,9 +32,7 @@ const ProductDetail = ({ product }: ProductProps) => {
       dispatch(updateProductInCartSaga(product))
       setTotal(state => state - 1)
     } else {
-      new Notification('Olá', {
-        body: 'Não pode mais tirar!!!'
-      })
+      toast.info('Valor não permitido!')
     }
   }
 

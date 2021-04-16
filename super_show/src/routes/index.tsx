@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addProductsSaga } from '../store/cart/action'
+import { toast } from 'react-toastify'
 
 import Header from '../components/Header'
 import ShowCart from '../pages/ShowCart'
@@ -16,7 +17,7 @@ const Routes = () => {
       try {
         await dispatch(addProductsSaga())
       } catch (e) {
-        console.log('full errooo', e)
+        toast.error('Erro ao carregar produtos!')
       }
     }
     loadItems()
