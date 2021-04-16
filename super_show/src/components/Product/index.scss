@@ -49,13 +49,13 @@
           s{
             font-size: 0.9rem;
             font-weight: 600;
-            color: #727273;
+            color: var(--color-dark-gray);
           }
         }
         .product_new_price{
           font-size: 1.5rem;
           font-weight: bold;
-          color: #F24405;
+          color: var(--color-red-one);
         }
       }
     }

@@ -1,5 +1,5 @@
 .navbar {
-  background: #011C26;
+  background: var(--color-dark);
   height: 80px;
 
   .navbar_title {
@@ -35,7 +35,7 @@
         top: 45px;
         right: 530px;
         
-        background: #F24405;
+        background: var(--color-red-one);
         color: white;
         
         text-align: center;
