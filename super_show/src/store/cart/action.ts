@@ -11,6 +11,9 @@ export const addProductToCart = (data: any) =>
 export const updateProductInCart = (data: any) =>
   action(CartActions.UPDATE_CART_PRODUCT, data)
 
+export const removeProductToCart = (id: number) =>
+  action(CartActions.REMOVE_CART_PRODUCT, id)
+
 /** Sagas */
 export const addProductsSaga = () => action(CartActionsSaga.ADD_PRODUCTS_SAGA)
 
@@ -19,3 +22,6 @@ export const addProductToCartSaga = (data: any) =>
 
 export const updateProductInCartSaga = (data: any) =>
   action(CartActionsSaga.UPDATE_CART_PRODUCT_SAGA, data)
+
+export const removeProductToCartSaga = (id: number) =>
+  action(CartActionsSaga.REMOVE_CART_PRODUC_SAGA, id)

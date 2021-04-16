@@ -63,9 +63,13 @@ export const cartReducer = (state = InitialState, action: AnyAction) => {
         updatedProducts[indexUpdateCart].stock += 1
 
         if (updatedCart[indexUpdateCart].qtd === 0) {
+          const newCart = updatedCart.filter(
+            item => item.id !== indexUpdateCart
+          )
+
           return {
             products: [...updatedProducts],
-            cart: []
+            cart: [...newCart]
           }
         }
         return {
@@ -74,6 +78,14 @@ export const cartReducer = (state = InitialState, action: AnyAction) => {
         }
       }
       return state
+    case CartActions.REMOVE_CART_PRODUCT:
+      const removeCartProd = state.cart.filter(
+        prod => prod.id !== action.payload
+      )
+      return {
+        ...state,
+        cart: [...removeCartProd]
+      }
     default:
       return state
   }
